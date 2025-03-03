@@ -29,13 +29,13 @@ const user =new mongoose.Schema({
     },
     foverite:[
         {type:mongoose.Types.ObjectId,
-            ref:"books",
+            ref:"book",
         },
     ],
     cart:[
         {
             type:mongoose.Types.ObjectId,
-            ref:"books",
+            ref:"book",
         },
     ],
     orders:[
