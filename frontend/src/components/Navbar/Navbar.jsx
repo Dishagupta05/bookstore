@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const links = [
@@ -25,20 +26,23 @@ const Navbar = () => {
     ];
   return (
     <div className='bg-zinc-800 text-white px-8 py-4 flex items-center justify-between'>
-        <div className='flex items-center'>
+        <Link to="/" className='flex items-center'>
         <img className='h-10 me-4'
         src="https://cdn-icons-png.flaticon.com/128/10433/10433049.png" 
         alt='logo'></img>
             <h1 className='text-2xl font-semibold'>BookHeaven</h1>
-        </div>
+        </Link>
         <div className='nav-links-bookheaven flex items-center gap-4'>
             <div className='flex gap-4'>
             {links.map((items,i)=>(
-                <div className='hover:text-blue-500 transition-300' key={i}>{items.title}</div>))}
+                <Link to={items.link}
+                className='hover:text-blue-500 transition-300' key={i}>{items.title}
+
+                </Link>))}
             </div>
             <div className='flex gap-4'>
-                <button className='px-2 py-1 border border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300'>login</button>
-                <button className='px-2 py-1 bg-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300'>Signin</button>
+                <Link to="/LogIn" className='px-2 py-1 border border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300'>login</Link>
+                <Link to="/SignUp" className='px-2 py-1 bg-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300'>Signin</Link>
                            
             </div>
         </div>
